@@ -90,7 +90,12 @@ def create_explainer(names):
 
 explainer = create_explainer(class_names)
 
-st.markdown("""
-<div class="hero">
-<h1>🛡️ Cyberbullying Detection Dashboard</h1>
-<p>Explainable text classification using TF-IDF, Stacking Ensemble Learning and LIME.</p>
+st.markdown(
+    """
+    <div class="hero">
+        <h1>🛡️ Cyberbullying Detection Dashboard</h1>
+        <p>Explainable text classification using TF-IDF, Stacking Ensemble Learning and LIME.</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
