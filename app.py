@@ -54,9 +54,15 @@ div[data-baseweb="textarea"] textarea::placeholder{
 </style>
 """, unsafe_allow_html=True)
 
+from huggingface_hub import hf_hub_download
+
 @st.cache_resource
 def load_artifacts():
-    return joblib.load("cyberbullying_artifacts.joblib")
+    model_path = hf_hub_download(
+        repo_id="rajaneesh0918/cyberbullying-artifacts",
+        filename="cyberbullying_artifacts.joblib"
+    )
+    return joblib.load(model_path)
 
 try:
     data = load_artifacts()
